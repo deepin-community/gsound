@@ -1,0 +1,6 @@
+usr/include/*
+usr/lib/*/libgsound.so
+usr/lib/*/pkgconfig/gsound.pc
+usr/share/gir-1.0/GSound-1.0.gir
+usr/share/vala/vapi/gsound.deps
+usr/share/vala/vapi/gsound.vapi

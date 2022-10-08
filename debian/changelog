@@ -1,0 +1,105 @@
+gsound (1.0.3-2) unstable; urgency=medium
+
+  * Have libgsound-dev depend on libcanberra-dev & libglib2.0-dev
+    per its pkgconfig file. Thanks Adrian Bunk for reporting.
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 22 Aug 2021 17:12:56 -0400
+
+gsound (1.0.3-1) unstable; urgency=medium
+
+  * New upstream release
+  * Drop all patches: applied in new release
+  * Build with meson (Closes: #978827)
+  * debian/gsound-tools.install: Install manpage
+  * Bump debhelper-compat to 13
+  * Drop unneeded -Wl,--as-needed
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 22 Aug 2021 13:07:44 -0400
+
+gsound (1.0.2-5) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Jeremy Bicha ]
+  * Bump minimum debhelper to 12 for the dh-sequence feature
+
+  [ Andreas Henriksson ]
+  * Add patch to fix autoreconf problem (Closes: #976518)
+  * Use debhelper-compat (= 12) build-dependency
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, 
+    Repository, Repository-Browse.
+  * Update standards version to 4.5.0, no changes needed.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Tue, 05 Jan 2021 00:57:58 +0100
+
+gsound (1.0.2-4) unstable; urgency=medium
+
+  * debian/copyright: Update. Thanks Didier Roche for the review.
+  * Set dh_missing --fail-missing
+  * Build-Depend on dh-sequence-gir and dh-sequence-gnome
+  * Drop unused Build-Depends on intltool
+  * Cherry-pick gsound-play-Call-setlocale-ini-main-function.patch:
+    - Fix translation issue
+
+ -- Jeremy Bicha <jbicha@debian.org>  Tue, 12 Feb 2019 06:33:10 -0500
+
+gsound (1.0.2-3) unstable; urgency=medium
+
+  [ Robert Ancell ]
+  * Drop unnecessary Depends from libgsound-dev on libcanberra-dev
+
+  [ Jeremy Bicha ]
+  * Update Vcs fields for migration to https://salsa.debian.org/
+  * Add -Wl,-O1 -Wl,-z,defs -Wl,--as-needed to our LDFLAGS
+  * debian/libgsound0.symbols: Add Build-Depends-Package
+  * Bump Standards-Version to 4.3.0
+
+ -- Jeremy Bicha <jbicha@debian.org>  Tue, 25 Dec 2018 19:58:35 -0500
+
+gsound (1.0.2-2) unstable; urgency=medium
+
+  [ Michael Biebl ]
+  * Drop uploaders.mk from debian/rules as this breaks the clean target with
+    dh. Instead use the gnome dh addon which updates debian/control via
+    dh_gnome_clean.
+  * Drop --disable-silent-rules from debian/rules. This is now handled by dh
+    directly depending on whether the DH_QUIET environment variable is set.
+
+  [ Jeremy Bicha ]
+  * Update Vcs fields for conversion to git
+  * Add debian/gbp.conf
+  * Bump Standards-Version to 4.1.2
+  * Bump debhelper compat to 11
+  * Update Multi-Arch metadata
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sat, 16 Dec 2017 22:17:12 -0500
+
+gsound (1.0.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 09 Nov 2015 18:59:52 +0100
+
+gsound (1.0.1-3) unstable; urgency=medium
+
+  * debian/control.in: Add Multi-arch fields
+  * debian/control.in: Rename the gsound package binary to gsound-tools
+
+ -- Laurent Bigonville <bigon@debian.org>  Mon, 07 Sep 2015 00:08:33 +0200
+
+gsound (1.0.1-2) unstable; urgency=medium
+
+  * debian/libgsound0.symbols: Add a .symbols file
+  * debian/rules, debian/control.in: Call dh_girepository during the build
+  * debian/control.in: Fix the duplicated descriptions
+  * debian/control.in: Move the shared library to the libs section
+  * debian/control.in: Make the -dev package depends against the gir one per
+    our own g-i mini policy
+
+ -- Laurent Bigonville <bigon@debian.org>  Sun, 06 Sep 2015 20:51:16 +0200
+
+gsound (1.0.1-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Andreas Henriksson <andreas@fatal.se>  Wed, 19 Aug 2015 20:01:38 +0200
